@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.11"
 structlog = "^23.2.0"
 colorama = "^0.4.6"
-pydantic = "^2.4.2"
+pydantic = "^2.3.0"
 pydantic-settings = "^2.0.3"
 
 
