@@ -3,8 +3,8 @@ from typing import Optional
 
 import structlog
 
-from custom_logging.settings.schemas import LevelType
-from custom_logging.settings.structlog_config import configure_structlog
+from logging_custom.settings.schemas import LevelType
+from logging_custom.settings.structlog_config import configure_structlog
 
 
 class Logger:
@@ -27,7 +27,7 @@ class Logger:
             processors: Optional[list] = None
     ):
         if logger_dict_config is None:
-            from custom_logging.settings.logging_config import \
+            from logging_custom.settings.logging_config import \
                 get_logging_config
             logger_dict_config = get_logging_config(
                 self.path_to_warning_logs,
@@ -36,7 +36,7 @@ class Logger:
             )
 
         if processors is None:
-            from custom_logging.settings.base_processors import \
+            from logging_custom.settings.base_processors import \
                 base_processors
             processors = base_processors
 

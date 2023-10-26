@@ -2,7 +2,7 @@ import logging
 
 from structlog.typing import EventDict
 
-from custom_logging.base.color import add_color_level, get_fore_color, \
+from logging_custom.base.color import add_color_level, get_fore_color, \
     get_reset_all_colors
 
 
