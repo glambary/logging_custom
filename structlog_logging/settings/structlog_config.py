@@ -2,6 +2,8 @@ import logging.config
 
 import structlog
 
+from structlog_logging.settings.processors import base_processors
+
 
 def configure_structlog(processors: list):
     structlog.reset_defaults()
@@ -14,7 +16,7 @@ def configure_structlog(processors: list):
     )
 
 
-def set_config(dict_config: dict, processors: list):
+def set_config(dict_config: dict, processors: list = base_processors):
     """Подготовит struct logging к работе."""
     configure_structlog(processors)
     logging.config.dictConfig(dict_config)
