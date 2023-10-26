@@ -39,5 +39,6 @@ class Logger:
             from structlog_logging.settings.base_processors import \
                 base_processors
             processors = base_processors
+
         configure_structlog(processors)
         logging.config.dictConfig(logger_dict_config)
