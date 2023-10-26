@@ -2,7 +2,7 @@ import logging.config
 
 import structlog
 
-from structlog_logging.settings.processors import base_processors
+from structlog_logging.settings.base_processors import base_processors
 
 
 def configure_structlog(processors: list):

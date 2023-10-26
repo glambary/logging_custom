@@ -1,12 +1,12 @@
 import structlog
 
 from structlog_logging.base.processors import (
-    filter_by_level_custom,
+    # filter_by_level_custom,
     add_kwargs_in_event
 )
 
 base_processors = [
-    filter_by_level_custom,
+    # filter_by_level_custom,
     add_kwargs_in_event,
     structlog.stdlib.add_log_level,
     structlog.processors.TimeStamper(fmt="iso"),

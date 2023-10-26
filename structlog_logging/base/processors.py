@@ -4,8 +4,6 @@ from typing import NoReturn
 import structlog
 from structlog.typing import EventDict
 
-from core.settings import log_level
-
 
 def filter_by_level_custom(
     _: logging.Logger, name: str, event_dict: EventDict
