@@ -2,8 +2,8 @@ import sys
 
 import structlog
 
-from base.formatter import log_formatter_custom
-from settings.schemas import LevelType
+from structlog_logging.base.formatter import log_formatter_custom
+from structlog_logging.settings.schemas import LevelType
 
 
 def get_logging_config(
