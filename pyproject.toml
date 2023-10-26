@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "structlog-logging"
+name = "logging_custom"
 version = "0.1.0"
 description = ""
 authors = ["Сергей Хадкевич <s.hadkevich@agima.ru>"]
