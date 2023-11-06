@@ -27,7 +27,7 @@ class Logger:
             processors: Optional[list] = None
     ):
         if logger_dict_config is None:
-            from logging_custom.settings.logging_config import \
+            from logging_custom.default.logging_config import \
                 get_logging_config
             logger_dict_config = get_logging_config(
                 self.path_to_warning_logs,
@@ -36,9 +36,9 @@ class Logger:
             )
 
         if processors is None:
-            from logging_custom.settings.base_processors import \
-                base_processors
-            processors = base_processors
+            from logging_custom.default.processors import \
+                processors
+            processors = processors
 
         configure_structlog(processors)
         logging.config.dictConfig(logger_dict_config)

@@ -5,7 +5,7 @@ from logging_custom.base.processors import (
     add_kwargs_in_event
 )
 
-base_processors = [
+processors = [
     # filter_by_level_custom,
     add_kwargs_in_event,
     structlog.stdlib.add_log_level,

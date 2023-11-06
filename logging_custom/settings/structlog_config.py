@@ -4,8 +4,6 @@ import structlog
 
 
 def configure_structlog(processors: list):
-    structlog.reset_defaults()
-
     structlog.configure(
         processors=processors,
         logger_factory=structlog.stdlib.LoggerFactory(),
@@ -16,5 +14,8 @@ def configure_structlog(processors: list):
 
 def set_config(dict_config: dict, processors: list):
     """Подготовит struct logging к работе."""
+    structlog.reset_defaults()
+    logging.shutdown()
+
     configure_structlog(processors)
     logging.config.dictConfig(dict_config)
