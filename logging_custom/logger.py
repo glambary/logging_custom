@@ -4,7 +4,7 @@ from typing import Optional
 import structlog
 
 from logging_custom.settings.schemas import LevelType
-from logging_custom.settings.structlog_config import configure_structlog
+from logging_custom.settings.structlog_config import set_config
 
 
 class Logger:
@@ -40,5 +40,4 @@ class Logger:
                 processors
             processors = processors
 
-        configure_structlog(processors)
-        logging.config.dictConfig(logger_dict_config)
+        set_config(dict_config=logger_dict_config, processors=processors)
