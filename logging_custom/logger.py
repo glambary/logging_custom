@@ -1,10 +1,9 @@
-import logging.config
 from typing import Optional
 
 import structlog
 
-from logging_custom.settings.schemas import LevelType
-from logging_custom.settings.structlog_config import set_config
+from logging_custom.common.schemas import LevelType
+from logging_custom.settings import set_config
 
 
 class Logger:
@@ -27,17 +26,26 @@ class Logger:
             processors: Optional[list] = None
     ):
         if logger_dict_config is None:
-            from logging_custom.default.logging_config import \
-                get_logging_config
-            logger_dict_config = get_logging_config(
-                self.path_to_warning_logs,
-                self.project_name,
-                self.level_type
-            )
+            logger_dict_config = self._get_default_dict_config()
 
         if processors is None:
-            from logging_custom.default.processors import \
-                processors
-            processors = processors
+            processors = self._get_default_processors()
 
         set_config(dict_config=logger_dict_config, processors=processors)
+
+    def _get_default_dict_config(self):
+        from logging_custom.default.logging_config import \
+            get_logging_config
+
+        return get_logging_config(
+            self.path_to_warning_logs,
+            self.project_name,
+            self.level_type
+        )
+
+    @staticmethod
+    def _get_default_processors():
+        from logging_custom.default.processors import \
+            processors
+
+        return processors

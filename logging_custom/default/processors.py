@@ -1,6 +1,6 @@
 import structlog
 
-from logging_custom.base.processors import (
+from logging_custom.common.processors import (
     # filter_by_level_custom,
     add_kwargs_in_event
 )
