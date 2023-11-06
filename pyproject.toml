@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "logging_custom"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Сергей Хадкевич <s.hadkevich@agima.ru>"]
 readme = "README.md"
